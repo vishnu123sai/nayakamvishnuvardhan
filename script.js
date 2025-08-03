@@ -1,6 +1,6 @@
 // Initialize EmailJS
 (function() {
-    emailjs.init("P3cI_Fvl4QGzj2-igS"); // Replace with your EmailJS public key
+    emailjs.init("P3cI_Fvl4QGzj2-ig"); // Replace with your EmailJS public key
 })();
 
 // Smooth scrolling for navigation links
