@@ -116,7 +116,7 @@ async function handleContactForm(e) {
 // Send data to Google Sheets
 async function sendToGoogleSheets(data) {
     // Google Apps Script Web App URL - you'll need to create this
-    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxjFvi7LeP9dnr-eSVY86H3xLMTjtmuisFEkGof3M3n1AcHo0bRxmlM6meUSi-dPz98/exec';
     
     const response = await fetch(scriptURL, {
         method: 'POST',
