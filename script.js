@@ -1,6 +1,6 @@
 // Initialize EmailJS
 (function() {
-    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // Replace with your EmailJS public key
+    emailjs.init("P3cI_Fvl4QGzj2-igS"); // Replace with your EmailJS public key
 })();
 
 // Smooth scrolling for navigation links
@@ -145,8 +145,8 @@ async function sendEmailNotification(data) {
     
     try {
         await emailjs.send(
-            'YOUR_EMAILJS_SERVICE_ID', // Replace with your EmailJS service ID
-            'YOUR_EMAILJS_TEMPLATE_ID', // Replace with your EmailJS template ID
+            'service_cxpsy8k', // Replace with your EmailJS service ID
+            'template_fun2k59', // Replace with your EmailJS template ID
             templateParams
         );
     } catch (error) {
