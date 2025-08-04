@@ -103,12 +103,11 @@ async function handleContactForm(e) {
         // Try to send email notification (optional)
         try {
             await sendEmailNotification(data);
+            showAlert('Message received! I\'ll get back to you soon.', 'success');
         } catch (emailError) {
             console.log('EmailJS not configured yet:', emailError);
         }
         
-        // Always show success message for now
-        showAlert('Message received! I\'ll get back to you soon. (Note: Email services need to be configured for full functionality)', 'success');
         form.reset();
         
     } catch (error) {
