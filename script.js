@@ -100,16 +100,9 @@ async function handleContactForm(e) {
         try {
             await sendToGoogleSheets(data);
         } catch (sheetsError) {
-            console.log('Google Sheets not configured yet:', sheetsError);
+            // console.log('Google Sheets not configured yet:', sheetsError);
         }
         
-        // Try to send email notification (optional)
-        try {
-            await sendEmailNotification(data);
-            showAlert('Message received! I\'ll get back to you soon.', 'success');
-        } catch (emailError) {
-            console.log('EmailJS not configured yet:', emailError);
-        }
         
         form.reset();
         
@@ -127,8 +120,7 @@ async function handleContactForm(e) {
 // Send data to Google Sheets
 async function sendToGoogleSheets(data) {
     // Google Apps Script Web App URL - you'll need to create this
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxjFvi7LeP9dnr-eSVY86H3xLMTjtmuisFEkGof3M3n1AcHo0bRxmlM6meUSi-dPz98/exec'; // Replace with your Google Apps Script URL
-    
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxNSSfOnasWZILm36KGrc3ar9WJ4OiHykImHQ7uvfLDutqrIZtsyARenXJE4H8xYxII/exec'
     const response = await fetch(scriptURL, {
         method: 'POST',
         mode: 'no-cors',
@@ -143,28 +135,6 @@ async function sendToGoogleSheets(data) {
     }
 }
 
-// Send email notification using EmailJS
-async function sendEmailNotification(data) {
-    const templateParams = {
-        to_name: 'Vishnuvardhan Nayakam', // Replace with your name
-        from_name: data.name,
-        from_email: data.email,
-        subject: data.subject,
-        message: data.message,
-        reply_to: data.email
-    };
-    
-    try {
-        await emailjs.send(
-            'service_cxpsy8k', // Replace with your EmailJS service ID
-            'template_fun2k59', // Replace with your EmailJS template ID
-            templateParams
-        );
-    } catch (error) {
-        console.error('EmailJS error:', error);
-        // Don't throw error here as Google Sheets backup worked
-    }
-}
 
 // Show alert messages
 function showAlert(message, type) {
