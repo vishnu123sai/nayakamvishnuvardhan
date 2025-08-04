@@ -1,7 +1,3 @@
-// Initialize EmailJS
-(function() {
-    emailjs.init("P3cI_Fvl4QGzj2-ig"); // Replace with your EmailJS public key
-})();
 
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
@@ -103,7 +99,7 @@ async function handleContactForm(e) {
             // console.log('Google Sheets not configured yet:', sheetsError);
         }
         
-        
+        showAlert('Message received! I\'ll get back to you soon.', 'success'); 
         form.reset();
         
     } catch (error) {
