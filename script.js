@@ -7,18 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to handle smooth scrolling
     function handleSmoothScroll(e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+        
+        // Only apply smooth scrolling to internal links (starting with #)
+        if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // For external links (like blogs), let the default behavior happen
     }
     
     // Add event listeners to navigation links
