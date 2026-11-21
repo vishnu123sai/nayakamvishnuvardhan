@@ -1,13 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishnuvardhan Nayakam - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Vishnuvardhan Nayakam | Senior DevOps &amp; Platform Engineer | AI-Driven Cloud &amp; Kubernetes Automation</title>
+    <meta name="description" content="Senior DevOps &amp; Platform Engineer with 8.5+ years of experience in AWS EKS, GCP GKE, Kubernetes, Terraform, AWS CDK, Python, Go, CI/CD (Jenkins, Spinnaker, CloudBuild), and AI-powered agentic automation (Claude, LLM, RAG, StackStorm).">
+    <meta name="keywords" content="Senior DevOps Engineer, Platform Engineer, Site Reliability Engineer, SRE, Cloud Infrastructure Engineer, AWS, GCP, Hybrid Cloud, Multi-Cloud, Kubernetes, AWS EKS, GCP GKE, Docker, Container Orchestration, Claude, LLM, RAG, Agentic Workflows, Agentic Automation, MCP, Terraform, AWS CDK, TypeScript, Ansible, Puppet, Infrastructure as Code, IaC, Jenkins, Spinnaker, CloudBuild, Git, CI/CD, CloudWatch, Grafana, Splunk, Stackdriver, Observability, Python, Go, Shell Scripting, Bash, Node.js, StackStorm, JIRA, ServiceNow, MySQL, NoSQL, DynamoDB, RDS, Lambda, Fargate, Linux, CKA, CKAD, KCNA, GCP Professional Cloud Architect, GCP Data Engineer, AWS Cloud Practitioner, Salesforce, Amazon">
+    <meta name="author" content="Vishnuvardhan Nayakam">
+    <link rel="canonical" href="https://vishnuvardhannayakam.co.in/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vishnuvardhan Nayakam — Senior DevOps &amp; Platform Engineer">
+    <meta property="og:description" content="8.5+ years designing, automating, and operating cloud-native Kubernetes (EKS/GKE) infrastructure and AI-powered event-driven automation systems.">
+    <meta property="og:url" content="https://vishnuvardhannayakam.co.in/">
+    <meta property="og:image" content="https://vishnuvardhannayakam.co.in/photo.jpg">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    
+
+    <!-- Structured Data (JSON-LD) for Search & ATS Parsers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vishnuvardhan Nayakam",
+      "jobTitle": "Senior DevOps Engineer | Senior Member of Technical Staff",
+      "description": "Platform & Senior DevOps Engineer with 8.5+ years of experience in AWS EKS, GCP GKE, Hybrid Cloud, Terraform, AWS CDK, CI/CD, Python, Go, and AI-powered event-driven agentic automation.",
+      "url": "https://vishnuvardhannayakam.co.in",
+      "email": "mailto:vishnu123sai@gmail.com",
+      "telephone": "+91-8688272707",
+      "image": "https://vishnuvardhannayakam.co.in/photo.jpg",
+      "sameAs": [
+        "https://linkedin.com/in/nayakamvishnuvardhan",
+        "https://blogs.vishnuvardhannayakam.co.in",
+        "https://github.com/vishnu123sai"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Salesforce"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Jawaharlal Nehru Technological University"
+      },
+      "knowsAbout": [
+        "AWS", "GCP", "Hybrid Cloud", "Kubernetes", "AWS EKS", "GCP GKE", "Docker",
+        "Claude", "LLM", "RAG", "Agentic Workflows", "Agentic Automation",
+        "Terraform", "AWS CDK", "Ansible", "Puppet", "Infrastructure as Code",
+        "Jenkins", "Spinnaker", "CloudBuild", "Git", "CI/CD",
+        "CloudWatch", "Grafana", "Splunk", "Stackdriver",
+        "Python", "Go", "Shell Scripting", "Node.js", "JavaScript",
+        "StackStorm", "JIRA", "ServiceNow", "MySQL", "NoSQL", "Linux"
+      ],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Administrator (CKA)" },
+        { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Application Developer (CKAD)" },
+        { "@type": "EducationalOccupationalCredential", "name": "Kubernetes and Cloud Native Associate (KCNA)" },
+        { "@type": "EducationalOccupationalCredential", "name": "GCP Certified Professional Cloud Architect" },
+        { "@type": "EducationalOccupationalCredential", "name": "GCP Associate Cloud Engineer" },
+        { "@type": "EducationalOccupationalCredential", "name": "GCP Certified Professional Data Engineer" },
+        { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Cloud Practitioner" }
+      ]
+    }
+    </script>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -19,415 +80,711 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">Vishnuvardhan Nayakam</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <header class="site-header" id="siteHeader">
+        <nav class="nav-container" aria-label="Primary Navigation">
+            <a href="#home" class="brand">
+                <span class="brand-prompt">&gt;_</span>
+                <span class="brand-name">vishnu.nayakam</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#certifications">Certifications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://blogs.vishnuvardhannayakam.co.in" target="_blank" rel="noopener noreferrer" onclick="window.open('https://blogs.vishnuvardhannayakam.co.in', '_blank'); return false;">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold text-white mb-4">Hi, I'm Vishnuvardhan Nayakam</h1>
-                    <h2 class="h3 text-light mb-4">DevOps Engineer | Cloud Infrastructure | Automation | Python Development | AI Enthusiast</h2>
-                    <p class="lead text-light mb-4">
-                        <strong>Phone:</strong> 8688272707 &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:vishnu123sai@gmail.com" class="text-white">vishnu123sai@gmail.com</a><br>
-                        <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nayakamvishnuvardhan" class="text-white" target="_blank">linkedin.com/in/nayakamvishnuvardhan</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Summary</a></li>
+                <li><a href="#skills">Core Stack</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Systems</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="https://blogs.vishnuvardhannayakam.co.in" target="_blank" rel="noopener noreferrer">Blogs <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="printResumeBtn" title="Print / Save ATS Resume as PDF" aria-label="Print or Save ATS Resume as PDF">
+                    <i class="fas fa-file-arrow-down"></i>
+                    <span class="btn-label">ATS Resume</span>
+                </button>
+                <button class="icon-btn" id="themeToggle" title="Toggle Dark/Light Theme" aria-label="Toggle Dark/Light Theme">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg-grid" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="status-pill">
+                        <span class="pulse-dot"></span>
+                        <span>Senior Member of Technical Staff @ Salesforce &bull; 8.5+ Years Exp</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Vishnuvardhan <span class="gradient-text">Nayakam</span>
+                    </h1>
+
+                    <h2 class="hero-subtitle">
+                        Senior DevOps Engineer &amp; Platform Engineer &bull; Kubernetes (EKS/GKE) &bull; AI-Driven Agentic Automation
+                    </h2>
+
+                    <p class="hero-summary">
+                        Designing, automating, and operating multi-cloud &amp; hybrid-cloud infrastructure across <strong>AWS</strong> and <strong>GCP</strong>. Building <strong>AI-powered, event-driven automation systems</strong> (Python, Claude-based agents, StackStorm) that cut operational processing time by <strong>5x</strong> and maintain <strong>99.5%+ compliance SLAs</strong>.
                     </p>
-                    <div class="d-flex gap-3">
-                        <a href="#contact" class="btn btn-primary btn-lg">Get In Touch</a>
-                        <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="hero-image">
-                        <i class="fas fa-code fa-10x text-primary"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold">About Me</h2>
-                    <div class="divider mx-auto"></div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="photo.jpg" alt="Your Photo" class="img-fluid rounded-circle mb-4">
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Professional Summary</h3>
-                    <p class="lead mb-4">
-                        I am a seasoned DevOps Engineer with over ~8 years of experience specializing in cloud infrastructure, automation, and Python development. I hold multiple professional certifications including Certified Kubernetes Administrator (CKA), Certified Kubernetes Application Developer (CKAD), AWS Certified Cloud Practitioner, and Google Cloud Professional certifications. My expertise spans AWS and GCP platforms, infrastructure provisioning using Terraform and AWS CDK, and CI/CD pipeline implementation. I excel in container orchestration, system design, and managing high-availability production environments, consistently delivering scalable and reliable solutions in Agile settings.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5><i class="fas fa-code text-primary me-2"></i>Skills</h5>
-                            <ul class="list-unstyled">
-                                <li><strong>Cloud & DevOps:</strong> AWS, GCP, Kubernetes, Docker, Terraform, Jenkins, Ansible, Puppet</li>
-                                <li><strong>Programming:</strong> Python, Java, JavaScript, HTML, CSS, Bootstrap</li>
-                                <li><strong>Frameworks:</strong> Django, Flask, Serverless, AWS Lambda, Fargate</li>
-                                <li><strong>Databases:</strong> SQL, NoSQL, DynamoDB, RDS, S3</li>
-                                <li><strong>Monitoring:</strong> CloudWatch, Grafana, Splunk, Argus</li>
-                                <li><strong>Tools:</strong> Git, GitHub, JIRA, Slack, Artifactory</li>
-                                <li><strong>Platforms:</strong> Linux/Unix, Shell Scripting, Apache</li>
-                                <li><strong>Methodologies:</strong> Agile, Version Control</li>
-                                <li><strong>AI:</strong> LLM, Agent Building, NLP</li>
-                            </ul>
-                        </div>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Get In Touch
+                        </a>
+                        <a href="#experience" class="btn btn-secondary">
+                            <i class="fas fa-briefcase"></i> View Experience
+                        </a>
+                        <button type="button" class="btn btn-ghost" id="heroPrintBtn">
+                            <i class="fas fa-print"></i> Save ATS PDF
+                        </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold">Professional Experience</h2>
-                    <div class="divider mx-auto"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <h4>Senior Member of Technical Staff (DevOps)</h4>
-                                <h6 class="text-primary">Salesforce</h6>
-                                <p class="text-muted">09/2022 - Present</p>
-                                <ul>
-                                    <li>Oversee the management and operation of AWS EKS Kubernetes clusters and on-premises infrastructure while performing critical maintenance tasks including upgrades, patching, and resizing</li>
-                                    <li>Develop Python-based internal tools and Slack automations to streamline manual processes and improve operational efficiency</li>
-                                    <li>Automate operational runbooks and workflows using the Stackstorm automation tool</li>
-                                    <li>Deploy applications across both AWS and on-premises environments while maintaining strict adherence to best practices and change compliance requirements</li>
-                                    <li>Enhance deployment workflows and reduce operational burden by adopting advanced Kubernetes features</li>
-                                    <li>Proactively troubleshoot and resolve complex production infrastructure and application issues, addressing both infrastructure and application-related challenges</li>
-                                    <li>Optimize infrastructure monitoring and alerting systems to ensure high availability of both infrastructure and applications</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <h4>Programmer Analyst</h4>
-                                <h6 class="text-primary">Amazon</h6>
-                                <p class="text-muted">09/2020 - 09/2022</p>
-                                <ul>
-                                    <li>Designed and developed serverless services using AWS Lambda and Fargate to enhance scalability and performance</li>
-                                    <li>Provisioned and managed AWS resources with AWS Cloud Development Kit (CDK) for consistent and repeatable infrastructure deployment</li>
-                                    <li>Implemented AWS solutions for cross-region and cross-VPC resource accessibility, ensuring seamless integration and communication</li>
-                                    <li>Addressed security and networking challenges for AWS resources to ensure compliance and optimal configuration</li>
-                                    <li>Collaborated with operational and technical teams to troubleshoot and resolve bugs, ensuring smooth system operations</li>
-                                    <li>Automated routine tasks and developed dashboards for the Trans Execution operations team to improve tracking and visibility of packages and vehicles</li>
-                                    <li>Worked with AWS services including Lambda, DynamoDB, RDS, EC2, S3, CloudWatch, CloudDeploy, and CloudPipeline to deliver integrated solutions</li>
-                                    <li>Managed data pipelines and pipeline jobs to ensure efficient and reliable data processing across systems</li>
-                                    <li>Contributed to system design discussions, providing insights to improve high availability, disaster recovery, and overall system performance</li>
-                                    <li>Enhanced existing features of data labeling and ingestion tools, improving user experience and streamlining application processes</li>
-                                    <li>Conducted root cause analysis to troubleshoot and resolve application issues, ensuring system reliability and minimal downtime</li>
-                                    <li>Collaborated with multiple teams to identify opportunities for process automation, improving operational efficiency across Amazon systems</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <h4>DevOps Engineer</h4>
-                                <h6 class="text-primary">GSPANN Technologies</h6>
-                                <p class="text-muted">05/2018 - 09/2020</p>
-                                <ul>
-                                    <li>Designed and developed Python scripts to automate and streamline operational workflows</li>
-                                    <li>Led the migration of the IGL application from on-premises VMs to cloud-based VMs, implementing a Blue-Green deployment strategy for seamless transitions</li>
-                                    <li>Automated daily support and operational tasks using Python to improve team efficiency</li>
-                                    <li>Conducted Proof of Concepts (POCs) for emerging technologies to evaluate their applicability and potential integration</li>
-                                    <li>Built and maintained monitoring dashboards for effective application and system monitoring, along with alerting configurations</li>
-                                    <li>Worked with Tomcat and Apache web servers to manage and optimize server-side applications</li>
-                                    <li>Gained hands-on experience with version control tools like Git to manage and track code changes</li>
-                                    <li>Configured and maintained Jenkins jobs for nightly builds, deployments, and continuous integration workflows</li>
-                                    <li>Troubleshot and resolved server-side issues impacting application functionality and performance</li>
-                                    <li>Created and managed incident tickets using JIRA and VersionOne, ensuring timely resolution of issues based on severity and priority</li>
-                                    <li>Set up and configured Google Cloud services, including Compute Engine, Storage, Load Balancer, VPC, Cloud VPN, and Networking to support cloud-based application infrastructure</li>
-                                    <li>Created and configured development environments, ensuring seamless deployment of code from Artifactory for QA and Performance teams</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="hero-contact-bar">
+                        <a href="tel:8688272707" class="contact-chip">
+                            <i class="fas fa-phone"></i> 8688272707
+                        </a>
+                        <a href="mailto:vishnu123sai@gmail.com" class="contact-chip">
+                            <i class="fas fa-envelope"></i> vishnu123sai@gmail.com
+                        </a>
+                        <a href="https://linkedin.com/in/nayakamvishnuvardhan" target="_blank" rel="noopener noreferrer" class="contact-chip">
+                            <i class="fab fa-linkedin"></i> linkedin.com/in/nayakamvishnuvardhan
+                        </a>
+                        <a href="https://vishnuvardhannayakam.co.in" target="_blank" rel="noopener noreferrer" class="contact-chip">
+                            <i class="fas fa-globe"></i> vishnuvardhannayakam.co.in
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold">Education</h2>
-                    <div class="divider mx-auto"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Bachelor of Technology in Electronics and Communication Engineering</h5>
-                            <h6 class="card-subtitle mb-2 text-primary">Jawaharlal Nehru Technological University</h6>
-                            <p class="card-text text-muted">08/2014 - 05/2018, Hyderabad</p>
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-photo-wrap">
+                            <img src="photo.jpg" alt="Vishnuvardhan Nayakam — Senior DevOps Engineer" class="profile-photo">
+                        </div>
+                        <div class="terminal-window" aria-label="Platform Profile Summary">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">vishnu@platform-eng:~</span>
+                            </div>
+                            <div class="terminal-body">
+                                <p><span class="cmd">$ whoami</span><br>Senior DevOps &amp; Platform Engineer (8.5+ yrs)</p>
+                                <p><span class="cmd">$ kubectl get certs</span><br>CKA &bull; CKAD &bull; KCNA &bull; GCP Architect &bull; GCP Data Eng &bull; AWS</p>
+                                <p><span class="cmd">$ cat impact.json</span><br>{"ops_speedup": "5x", "effort_cut": "60%", "ci_cd": "+25%", "sla": "99.5%+"}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold">Featured Projects</h2>
-                    <div class="divider mx-auto"></div>
+            <!-- Key Impact Strip -->
+            <div class="container impact-strip">
+                <div class="impact-card">
+                    <div class="impact-value" data-target="5" data-suffix="x">5x</div>
+                    <div class="impact-label">Faster Operational Processing</div>
+                    <div class="impact-desc">Via AI-powered, event-driven automation (Python &amp; Claude agents)</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-value" data-target="60" data-suffix="%">60%</div>
+                    <div class="impact-label">Manual Effort Cut</div>
+                    <div class="impact-desc">On Monthly Org Migrations &amp; Capacity Adds within 3 months</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-value" data-target="25" data-suffix="%">25%</div>
+                    <div class="impact-label">Faster Deployments</div>
+                    <div class="impact-desc">From new CI/CD strategies across Jenkins &amp; Spinnaker</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-value">99.5%+</div>
+                    <div class="impact-label">Compliance &amp; Patching SLA</div>
+                    <div class="impact-desc">Maintained on 1P OS patching &amp; vulnerability automation</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        
-                        <div class="card-body">
-                            <h5 class="card-title">Slack Agent</h5>
-                            <p class="card-text">Intelligent Slack assistant that provides real-time information related to infrastructure, applications, incidents, metrics, and more, directly within Slack conversations.</p>
-                            <div class="d-flex gap-2 mb-3">
-                                <span class="badge bg-primary">Python</span>
-                                <span class="badge bg-secondary">LLM</span>
-                                <span class="badge bg-info">MCP</span>
-                                <span class="badge bg-dark">RAG</span>
-                            </div>
-                            <!-- <a href="#" class="btn btn-outline-primary">View Project</a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        
-                        <div class="card-body">
-                            <h5 class="card-title">Real-time Multilingual Chat Application</h5>
-                            <p class="card-text">A real-time chat application that detects the language of incoming messages and automatically translates them based on the recipient’s preferred language selection.</p>
-                            <div class="d-flex gap-2 mb-3">
-                                <span class="badge bg-info">Python</span>
-                                <span class="badge bg-dark">AWS Lambda</span>
-                                <span class="badge bg-primary">AWS Translate</span>
-                                <span class="badge bg-warning">WebSockets</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        
-                        <div class="card-body">
-                            <h5 class="card-title">Real-time Twitter COVID Tweet Streaming</h5>
-                            <p class="card-text">A real-time data pipeline that streams COVID-related tweets from Twitter to Elasticsearch using Apache Kafka for efficient data ingestion and distribution.</p>
-                            <div class="d-flex gap-2 mb-3">
-                                <span class="badge bg-success">Python</span>
-                                <span class="badge bg-warning">Kafka</span>
-                                <span class="badge bg-danger">Elasticsearch</span>
-                            </div>
-                            <a href="https://github.com/vishnu123sai/Twitter_Streaming_to_Elasticsearch_using_Kafka" class="btn btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        
-                        <div class="card-body">
-                            <h5 class="card-title">Data Analytics Dashboard</h5>
-                            <p class="card-text">Real-time analytics dashboard with interactive charts and data visualization of infrastructure and application metrics for easy monitoring and troubleshooting.</p>
-                            <div class="d-flex gap-2 mb-3">
-                                <span class="badge bg-info">Python</span>
-                                <span class="badge bg-secondary">SQL</span>
-                                <span class="badge bg-danger">JavaScript</span>
-                                <span class="badge bg-primary">Chart.js</span>
-                            </div>
-                            <!-- <a href="#" class="btn btn-outline-primary">View Project</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold">Certifications & Achievements</h2>
-                    <div class="divider mx-auto"></div>
+        <!-- About / Executive Summary -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">01 // EXECUTIVE SUMMARY</span>
+                    <h2 class="section-title">Cloud-Native Platform &amp; AI Automation Engineering</h2>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="certification-card text-center">
-                        <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="CKAD Logo" class="certification-logo mb-3">
-                        <h5>Certified Kubernetes Application Developer (CKAD)</h5>
-                        <p class="text-muted">Cloud Native Computing Foundation</p>
-                        <small class="text-muted">2026</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="certification-card text-center">
-                        <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS Logo" class="certification-logo mb-3">
-                        <h5>AWS Certified Cloud Practitioner</h5>
-                        <p class="text-muted">Amazon Web Services</p>
-                        <small class="text-muted">2025</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="certification-card text-center">
-                        <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="CKA Logo" class="certification-logo mb-3">
-                        <h5>Certified Kubernetes Administrator (CKA)</h5>
-                        <p class="text-muted">Cloud Native Computing Foundation</p>
-                        <small class="text-muted">2024</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="certification-card text-center">
-                        <img src="https://www.gstatic.com/marketing-cms/assets/images/29/8c/e1f2c0994e87b8d7edf2886f9c02/google-cloud.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Cloud Logo" class="certification-logo mb-3">
-                        <h5>Professional Cloud Architect</h5>
-                        <p class="text-muted">Google Cloud Platform</p>
-                        <small class="text-muted">2021</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="certification-card text-center">
-                        <img src="https://www.gstatic.com/marketing-cms/assets/images/29/8c/e1f2c0994e87b8d7edf2886f9c02/google-cloud.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Cloud Logo" class="certification-logo mb-3">
-                        <h5>Professional Data Engineer</h5>
-                        <p class="text-muted">Google Cloud Platform</p>
-                        <small class="text-muted">2020</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="certification-card text-center">
-                        <img src="https://www.gstatic.com/marketing-cms/assets/images/29/8c/e1f2c0994e87b8d7edf2886f9c02/google-cloud.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Cloud Logo" class="certification-logo mb-3">
-                        <h5>Associate Cloud Engineer</h5>
-                        <p class="text-muted">Google Cloud Platform</p>
-                        <small class="text-muted">2020</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold">Get In Touch</h2>
-                    <div class="divider mx-auto"></div>
-                    <p class="lead">I'm always interested in new opportunities and collaborations.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card">
-                        <div class="card-body">
-                            <form id="contactForm">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label">Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">Email *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
+                <div class="about-grid">
+                    <div class="about-prose card">
+                        <p>
+                            <strong>Platform Engineer &amp; Senior DevOps Engineer</strong> with <strong>8.5+ years of experience</strong> designing, automating, and operating cloud-native infrastructure at scale. Proven expertise in managing production <strong>Kubernetes</strong> clusters on <strong>AWS EKS</strong> and <strong>GCP GKE</strong>, optimizing infrastructure monitoring, and improving <strong>CI/CD</strong> and deployment workflows.
+                        </p>
+                        <p>
+                            Designed and built <strong>AI-powered, event-driven automation systems</strong> (<strong>Python</strong>, <strong>Claude-based agents</strong>) end-to-end — from architecture through production rollout — reducing operational processing time <strong>5x</strong> across infrastructure, incident response, and deployment workflows for a multi-team engineering organization.
+                        </p>
+                        <p>
+                            Built a <strong>Slack Bot–based internal tooling platform</strong> with AI-driven natural-language understanding (NLU/RAG), unifying release, infrastructure, and operational Q&amp;A into a single interface. Strong background in <strong>Python development</strong>, <strong>system design</strong>, <strong>Kubernetes operations</strong>, and <strong>hybrid cloud solutions</strong>, with a track record of automating operational runbooks and streamlining processes to increase reliability, compliance, and engineering velocity.
+                        </p>
+                    </div>
+
+                    <div class="about-highlights card">
+                        <h3>Core Engineering Pillars</h3>
+                        <ul class="pillar-list">
+                            <li>
+                                <i class="fas fa-cubes"></i>
+                                <div>
+                                    <strong>Multi-Cloud &amp; Hybrid Kubernetes</strong>
+                                    <span>Production AWS EKS, GCP GKE &amp; on-prem cluster upgrades, patching, capacity analysis, and abstracted platform layers.</span>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Subject *</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                            </li>
+                            <li>
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>Agentic AI &amp; Event-Driven Ops</strong>
+                                    <span>Claude-based agents, RAG, LLM workflows, and StackStorm runbook automation cutting ops overhead by 5x.</span>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Message *</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </li>
+                            <li>
+                                <i class="fas fa-code-branch"></i>
+                                <div>
+                                    <strong>IaC &amp; High-Velocity CI/CD</strong>
+                                    <span>Terraform, AWS CDK (TypeScript), Ansible, Puppet, Jenkins, Spinnaker, CloudBuild, and Blue-Green deployments.</span>
                                 </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-halved"></i>
+                                <div>
+                                    <strong>Reliability, Security &amp; Compliance</strong>
+                                    <span>99.5%+ 1P OS patching SLA, Vulnerability Notifier automation, and deep observability via CloudWatch, Grafana &amp; Splunk.</span>
                                 </div>
-                            </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Stack / ATS Skills Matrix -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">02 // TECHNICAL ARSENAL</span>
+                    <h2 class="section-title">Core Stack &amp; Platform Capabilities</h2>
+                    <p class="section-subtitle">Filter by domain to inspect production technologies, frameworks, and operational tooling.</p>
+                </div>
+
+                <div class="filter-bar" role="tablist" aria-label="Filter technical skills">
+                    <button class="filter-btn active" data-filter="all">All Stack</button>
+                    <button class="filter-btn" data-filter="cloud">Cloud &amp; Containers</button>
+                    <button class="filter-btn" data-filter="ai">AI / Agentic</button>
+                    <button class="filter-btn" data-filter="iac">IaC &amp; CI/CD</button>
+                    <button class="filter-btn" data-filter="obs">Monitoring &amp; Ops</button>
+                    <button class="filter-btn" data-filter="code">Scripting &amp; Data</button>
+                </div>
+
+                <div class="skills-grid" id="skillsGrid">
+                    <div class="skill-card card" data-category="cloud">
+                        <div class="skill-card-head">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud &amp; Containers</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">AWS</span>
+                            <span class="tag tag-primary">GCP</span>
+                            <span class="tag tag-primary">Hybrid Cloud</span>
+                            <span class="tag tag-primary">Kubernetes</span>
+                            <span class="tag">AWS EKS</span>
+                            <span class="tag">GCP GKE</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">AWS Lambda</span>
+                            <span class="tag">AWS Fargate</span>
+                            <span class="tag">EC2 / S3 / VPC</span>
+                            <span class="tag">Compute Engine</span>
+                            <span class="tag">Load Balancing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card card" data-category="ai">
+                        <div class="skill-card-head">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI &amp; Agentic Systems</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">Claude</span>
+                            <span class="tag tag-primary">LLM</span>
+                            <span class="tag tag-primary">RAG</span>
+                            <span class="tag tag-primary">Agentic Workflows</span>
+                            <span class="tag tag-primary">Agentic Automation</span>
+                            <span class="tag">MCP (Model Context Protocol)</span>
+                            <span class="tag">Natural Language Understanding (NLU)</span>
+                            <span class="tag">Event-Driven AI Agents</span>
+                            <span class="tag">Slack ChatOps</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card card" data-category="iac">
+                        <div class="skill-card-head">
+                            <i class="fas fa-layer-group"></i>
+                            <h3>IaC &amp; Config Management</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">Terraform</span>
+                            <span class="tag tag-primary">AWS CDK (TypeScript)</span>
+                            <span class="tag tag-primary">Ansible</span>
+                            <span class="tag tag-primary">Puppet</span>
+                            <span class="tag">Infrastructure as Code</span>
+                            <span class="tag">Configuration Drift Prevention</span>
+                            <span class="tag">Multi-Cloud Abstraction</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card card" data-category="iac">
+                        <div class="skill-card-head">
+                            <i class="fas fa-rocket"></i>
+                            <h3>CI/CD &amp; Version Control</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">Jenkins</span>
+                            <span class="tag tag-primary">Spinnaker</span>
+                            <span class="tag tag-primary">CloudBuild</span>
+                            <span class="tag tag-primary">Git</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">AWS CodePipeline</span>
+                            <span class="tag">AWS CodeDeploy</span>
+                            <span class="tag">Artifactory</span>
+                            <span class="tag">Blue-Green Deployment</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card card" data-category="obs">
+                        <div class="skill-card-head">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Monitoring &amp; Observability</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">CloudWatch</span>
+                            <span class="tag tag-primary">Grafana</span>
+                            <span class="tag tag-primary">Splunk</span>
+                            <span class="tag tag-primary">StackDriver</span>
+                            <span class="tag">Argus</span>
+                            <span class="tag">Alerting &amp; Dashboards</span>
+                            <span class="tag">High Availability (HA)</span>
+                            <span class="tag">Disaster Recovery (DR)</span>
+                            <span class="tag">Root Cause Analysis (RCA)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card card" data-category="code">
+                        <div class="skill-card-head">
+                            <i class="fas fa-terminal"></i>
+                            <h3>Scripting &amp; Programming</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">Python</span>
+                            <span class="tag tag-primary">Go</span>
+                            <span class="tag tag-primary">Shell / Bash</span>
+                            <span class="tag tag-primary">Node / JS (basics)</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Django / Flask</span>
+                            <span class="tag">REST APIs / WebSockets</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card card" data-category="obs code">
+                        <div class="skill-card-head">
+                            <i class="fas fa-gears"></i>
+                            <h3>Automation, ITSM &amp; Databases</h3>
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag tag-primary">StackStorm</span>
+                            <span class="tag tag-primary">JIRA</span>
+                            <span class="tag tag-primary">ServiceNow</span>
+                            <span class="tag tag-primary">MySQL</span>
+                            <span class="tag tag-primary">NoSQL (basics)</span>
+                            <span class="tag tag-primary">Linux</span>
+                            <span class="tag">DynamoDB</span>
+                            <span class="tag">AWS RDS</span>
+                            <span class="tag">VersionOne</span>
+                            <span class="tag">Agile / Runbook Automation</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">03 // WORK EXPERIENCE</span>
+                    <h2 class="section-title">8.5+ Years of Production Impact</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Salesforce -->
+                    <article class="timeline-item card">
+                        <div class="timeline-marker"></div>
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Senior Member of Technical Staff</h3>
+                                <div class="job-company">
+                                    <span class="company-name">Salesforce</span>
+                                    <span class="job-badge">Current Role</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-date"><i class="far fa-calendar-alt"></i> 09/2022 &mdash; Present</span>
+                            </div>
+                        </div>
+
+                        <div class="job-metrics">
+                            <span class="metric-pill">5x Faster Ops Processing</span>
+                            <span class="metric-pill">60% Effort Cut (Org Migrations)</span>
+                            <span class="metric-pill">25% Faster Deployments</span>
+                            <span class="metric-pill">&gt;99.5% 1P OS Patching SLA</span>
+                        </div>
+
+                        <ul class="job-bullets">
+                            <li>Designed and built <strong>AI-powered, event-driven automation systems</strong> (<strong>Python</strong>, <strong>Claude-based agents</strong>) end-to-end &mdash; from architecture through production rollout &mdash; reducing operational processing time <strong>5x</strong> across infrastructure, incident response, and deployment workflows for a multi-team engineering org.</li>
+                            <li>Designed and implemented a <strong>Slack Bot&ndash;based internal tooling platform</strong> (<strong>Python</strong> + Slack automations) to automate routine manual tasks and improve operational efficiency, adding <strong>AI-driven natural-language understanding</strong> to answer questions on releases, infrastructure, and related details in one place.</li>
+                            <li>Reduced deployment times by <strong>25%</strong> by adopting new strategies and best practices across CI/CD pipelines.</li>
+                            <li>Managed <strong>CI/CD pipelines</strong> across <strong>Jenkins</strong> and <strong>Spinnaker</strong>, streamlining build and artifact generation and enabling seamless, reliable deployments.</li>
+                            <li>Developed the <strong>Vulnerability Notifier</strong> tool, automating vulnerability identification and resolution &mdash; saving <strong>90 minutes weekly</strong> and ensuring <strong>99% compliance SLA</strong>.</li>
+                            <li>Led a project to automate updates to the <code>service-availability-groups</code> repo after capacity changes, replacing manual diff/PR/notification steps &mdash; saving <strong>~60 minutes per event</strong> and supporting the 1P OS patching SLA of <strong>&gt;99.5%</strong>.</li>
+                            <li>Automated complex <strong>Monthly Org Migrations and Capacity Adds</strong> using <strong>event-driven architecture</strong>, reducing manual effort by <strong>60% within 3 months</strong> while enhancing accuracy and customer visibility.</li>
+                            <li>Performed <strong>Kubernetes</strong> cluster maintenance (upgrades, patching) and monthly <strong>Capacity Analysis</strong> to identify and implement capacity needs for new customers.</li>
+                            <li>Managed <strong>AWS EKS</strong> Kubernetes clusters and on-premises infrastructure, enhancing system reliability and performance.</li>
+                            <li>Automated operational runbooks and workflows using <strong>StackStorm</strong> and <strong>Claude-based dynamic workflows</strong>.</li>
+                            <li>Deployed applications across <strong>AWS</strong> and on-premises environments in line with best practices and evolving compliance requirements &mdash; enhancing deployment processes, reducing operational burden, and improving CTS via advanced Kubernetes features.</li>
+                            <li>Troubleshot and resolved production infrastructure and application issues; optimized monitoring and alerting systems to ensure high availability.</li>
+                            <li>Designed and enhanced application configurations and pipelines to support <strong>GCP</strong> and <strong>AWS</strong> via an internal abstracted platform layer at Salesforce.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Amazon -->
+                    <article class="timeline-item card">
+                        <div class="timeline-marker"></div>
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Programmer Analyst</h3>
+                                <div class="job-company">
+                                    <span class="company-name">Amazon</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-date"><i class="far fa-calendar-alt"></i> 09/2020 &mdash; 09/2022</span>
+                            </div>
+                        </div>
+
+                        <div class="job-metrics">
+                            <span class="metric-pill">AWS Serverless (Lambda / Fargate)</span>
+                            <span class="metric-pill">AWS CDK (IaC)</span>
+                            <span class="metric-pill">Cross-Region / Cross-VPC</span>
+                        </div>
+
+                        <ul class="job-bullets">
+                            <li>Led end-to-end design and implementation of <strong>Python-based internal tools</strong> using <strong>AWS serverless architectures</strong> (<strong>Lambda</strong>, <strong>Fargate</strong>), improving scalability, performance, and operational efficiency.</li>
+                            <li>Implemented <strong>Infrastructure as Code</strong> with <strong>AWS CDK</strong> to deliver repeatable AWS deployments, reducing configuration drift and improving deployment confidence.</li>
+                            <li>Designed and delivered scalable AWS solutions enabling <strong>cross-region and cross-VPC connectivity</strong>, leveraging <strong>Lambda, DynamoDB, RDS, EC2, S3, CloudWatch, CodeDeploy, and CodePipeline</strong> to support production systems.</li>
+                            <li>Automated operational workflows and built dashboards for the Trans Execution operations team, improving real-time visibility into package and vehicle tracking and increasing operational efficiency.</li>
+                            <li>Contributed to system design and architecture discussions focused on <strong>high availability, disaster recovery, and performance optimization</strong>, while enhancing data labeling and ingestion tools.</li>
+                            <li>Performed <strong>root cause analysis (RCA)</strong> and production troubleshooting, collaborating cross-functionally to resolve issues, reduce downtime, and drive automation across teams.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Gspann Technologies -->
+                    <article class="timeline-item card">
+                        <div class="timeline-marker"></div>
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">DevOps Engineering &amp; Automation Tools Building (Python)</h3>
+                                <div class="job-company">
+                                    <span class="company-name">Gspann Technologies</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-date"><i class="far fa-calendar-alt"></i> 05/2018 &mdash; 09/2020</span>
+                            </div>
+                        </div>
+
+                        <div class="job-metrics">
+                            <span class="metric-pill">Zero-Downtime Blue-Green Migration</span>
+                            <span class="metric-pill">GCP Infrastructure</span>
+                            <span class="metric-pill">Jenkins / Git / Artifactory</span>
+                        </div>
+
+                        <ul class="job-bullets">
+                            <li>Designed and developed <strong>Python-based automation</strong> to streamline operational workflows and daily support tasks, significantly improving team efficiency and reducing manual effort.</li>
+                            <li>Led the migration of the IGL application from on-premises VMs to cloud-based infrastructure, implementing <strong>Blue-Green deployment strategies</strong> for seamless releases with zero downtime.</li>
+                            <li>Built and maintained monitoring dashboards and alerting systems to ensure application health, performance visibility, and rapid incident response.</li>
+                            <li>Managed <strong>CI/CD pipelines</strong> using <strong>Jenkins, Git, and Artifactory</strong>, supporting nightly builds, automated deployments, and reliable code promotion across environments.</li>
+                            <li>Conducted <strong>Proof of Concepts (POCs)</strong> to evaluate emerging technologies and drive informed adoption decisions.</li>
+                            <li>Provisioned and configured <strong>Google Cloud</strong> infrastructure &mdash; <strong>Compute Engine, Storage, Load Balancing, VPC, VPN, and networking</strong> &mdash; to support scalable cloud-based applications.</li>
+                            <li>Managed incidents and operational workflows using <strong>JIRA</strong> and <strong>VersionOne</strong>, ensuring timely resolution aligned with priority and business impact.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Systems & Projects -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">04 // FEATURED SYSTEMS &amp; PROJECTS</span>
+                    <h2 class="section-title">Architecture, Automation &amp; Engineering Builds</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card card">
+                        <div class="project-top">
+                            <span class="project-icon"><i class="fas fa-bolt"></i></span>
+                            <span class="project-impact">5x Ops Speedup</span>
+                        </div>
+                        <h3>AI-Powered Event-Driven Automation</h3>
+                        <p>End-to-end event-driven automation platform using Python and Claude-based agents to orchestrate infrastructure operations, incident response, runbooks, and Monthly Org Migrations.</p>
+                        <div class="tag-cloud">
+                            <span class="tag">Python</span>
+                            <span class="tag">Claude Agents</span>
+                            <span class="tag">StackStorm</span>
+                            <span class="tag">Event-Driven</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <div class="project-top">
+                            <span class="project-icon"><i class="fab fa-slack"></i></span>
+                            <span class="project-impact">Unified ChatOps</span>
+                        </div>
+                        <h3>Slack Agent &amp; Internal Tooling Platform</h3>
+                        <p>Intelligent Slack assistant with AI-driven NLU, RAG, and MCP integration providing real-time answers on releases, infrastructure, incidents, and operational metrics in one place.</p>
+                        <div class="tag-cloud">
+                            <span class="tag">Python</span>
+                            <span class="tag">LLM / RAG</span>
+                            <span class="tag">MCP</span>
+                            <span class="tag">Slack API</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <div class="project-top">
+                            <span class="project-icon"><i class="fas fa-shield-virus"></i></span>
+                            <span class="project-impact">99.5%+ SLA</span>
+                        </div>
+                        <h3>Vulnerability Notifier &amp; Availability Automation</h3>
+                        <p>Automated vulnerability identification/resolution and <code>service-availability-groups</code> PR/diff updates after capacity changes, saving 90+ mins weekly and enforcing OS patching SLAs.</p>
+                        <div class="tag-cloud">
+                            <span class="tag">Python</span>
+                            <span class="tag">Git Automation</span>
+                            <span class="tag">Compliance</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <div class="project-top">
+                            <span class="project-icon"><i class="fas fa-language"></i></span>
+                            <span class="project-impact">Serverless</span>
+                        </div>
+                        <h3>Real-Time Multilingual Chat Application</h3>
+                        <p>Serverless real-time chat system that detects incoming message languages and automatically translates them based on each recipient's preferred language selection.</p>
+                        <div class="tag-cloud">
+                            <span class="tag">Python</span>
+                            <span class="tag">AWS Lambda</span>
+                            <span class="tag">AWS Translate</span>
+                            <span class="tag">WebSockets</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <div class="project-top">
+                            <span class="project-icon"><i class="fas fa-stream"></i></span>
+                            <a href="https://github.com/vishnu123sai/Twitter_Streaming_to_Elasticsearch_using_Kafka" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <h3>Real-Time Twitter Streaming Pipeline</h3>
+                        <p>High-throughput streaming data pipeline ingesting live Twitter feeds into Elasticsearch via Apache Kafka for real-time indexing, search, and distribution.</p>
+                        <div class="tag-cloud">
+                            <span class="tag">Python</span>
+                            <span class="tag">Apache Kafka</span>
+                            <span class="tag">Elasticsearch</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card card">
+                        <div class="project-top">
+                            <span class="project-icon"><i class="fas fa-chart-area"></i></span>
+                            <span class="project-impact">Observability</span>
+                        </div>
+                        <h3>Infrastructure &amp; Operations Analytics Dashboard</h3>
+                        <p>Real-time analytics dashboard with interactive charts visualizing infrastructure, package/vehicle tracking, and application metrics for rapid troubleshooting.</p>
+                        <div class="tag-cloud">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Chart.js</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Education -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">05 // CREDENTIALS &amp; EDUCATION</span>
+                    <h2 class="section-title">7x Cloud &amp; Kubernetes Certified</h2>
+                </div>
+
+                <div class="certs-grid">
+                    <div class="cert-card card">
+                        <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="CNCF Kubernetes Logo" class="cert-logo">
+                        <h3>Certified Kubernetes Administrator (CKA)</h3>
+                        <p>Cloud Native Computing Foundation (CNCF)</p>
+                    </div>
+                    <div class="cert-card card">
+                        <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="CNCF Kubernetes Logo" class="cert-logo">
+                        <h3>Certified Kubernetes Application Developer (CKAD)</h3>
+                        <p>Cloud Native Computing Foundation (CNCF)</p>
+                    </div>
+                    <div class="cert-card card">
+                        <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="CNCF Kubernetes Logo" class="cert-logo">
+                        <h3>Kubernetes and Cloud Native Associate (KCNA)</h3>
+                        <p>Cloud Native Computing Foundation (CNCF)</p>
+                    </div>
+                    <div class="cert-card card">
+                        <img src="https://www.gstatic.com/marketing-cms/assets/images/29/8c/e1f2c0994e87b8d7edf2886f9c02/google-cloud.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Cloud Logo" class="cert-logo">
+                        <h3>GCP Certified Cloud Architect</h3>
+                        <p>Google Cloud Platform &bull; Professional</p>
+                    </div>
+                    <div class="cert-card card">
+                        <img src="https://www.gstatic.com/marketing-cms/assets/images/29/8c/e1f2c0994e87b8d7edf2886f9c02/google-cloud.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Cloud Logo" class="cert-logo">
+                        <h3>GCP Cloud Engineer</h3>
+                        <p>Google Cloud Platform &bull; Associate</p>
+                    </div>
+                    <div class="cert-card card">
+                        <img src="https://www.gstatic.com/marketing-cms/assets/images/29/8c/e1f2c0994e87b8d7edf2886f9c02/google-cloud.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Cloud Logo" class="cert-logo">
+                        <h3>GCP Certified Data Engineer</h3>
+                        <p>Google Cloud Platform &bull; Professional</p>
+                    </div>
+                    <div class="cert-card card">
+                        <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS Logo" class="cert-logo">
+                        <h3>AWS Cloud Practitioner</h3>
+                        <p>Amazon Web Services</p>
+                    </div>
+                </div>
+
+                <div class="education-banner card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div>
+                        <span class="edu-label">EDUCATION</span>
+                        <h3>B.Tech, Electronics &amp; Communication Engineering</h3>
+                        <p>Jawaharlal Nehru Technological University (JNTU), Hyderabad &bull; 08/2014 &ndash; 05/2018</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">06 // CONNECT</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Open to Staff/Principal DevOps, Platform Engineering, SRE, and AI Infrastructure opportunities.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info card">
+                        <h3>Direct Channels</h3>
+                        <p>Reach out directly via email, phone, or LinkedIn &mdash; or send a message using the form.</p>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span>Email</span>
+                                    <a href="mailto:vishnu123sai@gmail.com">vishnu123sai@gmail.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span>Phone</span>
+                                    <a href="tel:8688272707">8688272707</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <span>LinkedIn</span>
+                                    <a href="https://linkedin.com/in/nayakamvishnuvardhan" target="_blank" rel="noopener noreferrer">linkedin.com/in/nayakamvishnuvardhan</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-globe"></i>
+                                <div>
+                                    <span>Website &amp; Blogs</span>
+                                    <a href="https://blogs.vishnuvardhannayakam.co.in" target="_blank" rel="noopener noreferrer">blogs.vishnuvardhannayakam.co.in</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form id="contactForm" class="contact-form card">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Platform / DevOps role or collaboration" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity or project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <div id="formAlertContainer" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Vishnuvardhan Nayakam</h5>
-                    <p>DevOps Engineer | Cloud Infrastructure | Automation | Python Development | AI Enthusiast</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/nayakamvishnuvardhan" class="text-white me-3" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="mailto:vishnu123sai@gmail.com" class="text-white me-3"><i class="fas fa-envelope fa-lg"></i></a>
-                    </div>
-                </div>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>Vishnuvardhan Nayakam</strong>
+                <p>Senior DevOps Engineer &bull; Platform Engineer &bull; AI-Driven Cloud &amp; Kubernetes Automation</p>
             </div>
-            <hr>
-            <div class="text-center">
-                <p>&copy; 2024 Vishnuvardhan Nayakam. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/nayakamvishnuvardhan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:vishnu123sai@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://blogs.vishnuvardhannayakam.co.in" target="_blank" rel="noopener noreferrer" aria-label="Blogs"><i class="fas fa-blog"></i></a>
             </div>
+        </div>
+        <div class="container footer-bottom">
+            <span>&copy; <span id="currentYear">2026</span> Vishnuvardhan Nayakam. All rights reserved.</span>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

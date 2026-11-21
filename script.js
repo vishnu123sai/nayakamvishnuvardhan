@@ -1,297 +1,148 @@
-
-// Smooth scrolling for navigation links
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links and hero buttons
-    const navLinks = document.querySelectorAll('.nav-link');
-    const heroButtons = document.querySelectorAll('.hero-section .btn');
-    
-    // Function to handle smooth scrolling
-    function handleSmoothScroll(e) {
-        const targetId = this.getAttribute('href');
-        
-        // Only apply smooth scrolling to internal links (starting with #)
-        if (targetId && targetId.startsWith('#')) {
-            e.preventDefault();
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        // For external links (like blogs), let the default behavior happen
-    }
-    
-    // Add event listeners to navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', handleSmoothScroll);
-    });
-    
-    // Add event listeners to hero buttons
-    heroButtons.forEach(button => {
-        button.addEventListener('click', handleSmoothScroll);
-    });
-
-    // Navbar background on scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-dark');
-        } else {
-            navbar.classList.remove('bg-dark');
-        }
-    });
-
-    // Fade in animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    // Observe all sections for fade-in animation
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
-    });
-
-    // Contact form handling
+document.addEventListener('DOMContentLoaded', () => {
+    const html = document.documentElement;
+    const header = document.getElementById('siteHeader');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const printResumeBtn = document.getElementById('printResumeBtn');
+    const heroPrintBtn = document.getElementById('heroPrintBtn');
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactForm);
+    const formAlertContainer = document.getElementById('formAlertContainer');
+    const currentYear = document.getElementById('currentYear');
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
     }
-});
 
-// Contact form submission handler
-async function handleContactForm(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.innerHTML = '<span class="loading"></span> Sending...';
-    submitBtn.disabled = true;
-    
-    // Get form data
-    const formData = new FormData(form);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        message: formData.get('message'),
-        timestamp: new Date().toISOString()
-    };
-    
-    try {
-        // Try to send to Google Sheets (optional)
-        try {
-            await sendToGoogleSheets(data);
-        } catch (sheetsError) {
-            // console.log('Google Sheets not configured yet:', sheetsError);
-        }
-        
-        showAlert('Message received! I\'ll get back to you soon.', 'success'); 
-        form.reset();
-        
-    } catch (error) {
-        console.error('Error in form submission:', error);
-        showAlert('Message received! I\'ll get back to you soon.', 'success');
-        form.reset();
-    } finally {
-        // Reset button state
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }
-}
+    // Theme persistence
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    applyTheme(savedTheme);
 
-// Send data to Google Sheets
-async function sendToGoogleSheets(data) {
-    // Google Apps Script Web App URL - you'll need to create this
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxNSSfOnasWZILm36KGrc3ar9WJ4OiHykImHQ7uvfLDutqrIZtsyARenXJE4H8xYxII/exec'
-    const response = await fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    });
-    
-    if (!response.ok) {
-        throw new Error('Failed to send to Google Sheets');
-    }
-}
-
-
-// Show alert messages
-function showAlert(message, type) {
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
-    alertDiv.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-    
-    const contactSection = document.querySelector('#contact .card-body');
-    contactSection.appendChild(alertDiv);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        if (alertDiv.parentNode) {
-            alertDiv.remove();
-        }
-    }, 5000);
-}
-
-// Typing animation for hero section
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+    function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        if (themeIcon) {
+            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
     }
-    
-    type();
-}
 
-// Initialize typing animation when page loads
-window.addEventListener('load', function() {
-    const heroTitle = document.querySelector('.hero-section h1');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        typeWriter(heroTitle, originalText, 50);
-    }
-});
-
-// Project card hover effects
-document.addEventListener('DOMContentLoaded', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(current);
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-});
-
-// Skills animation
-function animateSkills() {
-    const skills = document.querySelectorAll('.skills li');
-    skills.forEach((skill, index) => {
-        setTimeout(() => {
-            skill.style.opacity = '1';
-            skill.style.transform = 'translateX(0)';
-        }, index * 200);
-    });
-}
-
-// Initialize skills animation when skills section is visible
-const skillsObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSkills();
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const skillsSection = document.querySelector('.skills');
-    if (skillsSection) {
-        skillsObserver.observe(skillsSection);
     }
-});
 
-// Counter animation for achievements
-function animateCounters() {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / speed;
-            
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        
-        updateCount();
-    });
-}
-
-// Initialize counter animation
-const counterObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            counterObserver.unobserve(entry.target);
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const achievementsSection = document.querySelector('#about');
-    if (achievementsSection) {
-        counterObserver.observe(achievementsSection);
+    // Print / Save ATS Resume PDF
+    function handlePrintResume() {
+        window.print();
     }
-});
+    if (printResumeBtn) printResumeBtn.addEventListener('click', handlePrintResume);
+    if (heroPrintBtn) heroPrintBtn.addEventListener('click', handlePrintResume);
 
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function() {
-            navbarCollapse.classList.toggle('show');
+    // Mobile Navigation Toggle
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
         });
-        
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navbarCollapse.classList.remove('show');
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
-});
 
-// Preloader (optional)
-window.addEventListener('load', function() {
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
+    // Sticky Header Shadow & Active Link Highlight
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        if (header) {
+            header.classList.toggle('scrolled', window.scrollY > 24);
+        }
+
+        const scrollPos = window.scrollY + 120;
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            const matchingLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+            if (matchingLink) {
+                if (scrollPos >= top && scrollPos < top + height) {
+                    matchingLink.classList.add('active');
+                } else {
+                    matchingLink.classList.remove('active');
+                }
+            }
+        });
+    }, { passive: true });
+
+    // Core Stack Category Filter
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            skillCards.forEach(card => {
+                const categories = (card.getAttribute('data-category') || '').split(' ');
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Contact Form Submission (preserving existing Google Sheets endpoint)
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            const formData = new FormData(contactForm);
+            const payload = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxNSSfOnasWZILm36KGrc3ar9WJ4OiHykImHQ7uvfLDutqrIZtsyARenXJE4H8xYxII/exec';
+                await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                showFormAlert('Message received! Thank you for reaching out — I will get back to you soon.', 'success');
+                contactForm.reset();
+            } catch (err) {
+                console.error('Contact form error:', err);
+                showFormAlert('Could not send via web form. Please email vishnu123sai@gmail.com directly.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
+            }
+        });
     }
-}); 
+
+    function showFormAlert(message, type) {
+        if (!formAlertContainer) return;
+        formAlertContainer.innerHTML = `<div class="form-alert ${type}">${message}</div>`;
+        setTimeout(() => {
+            formAlertContainer.innerHTML = '';
+        }, 6000);
+    }
+});
