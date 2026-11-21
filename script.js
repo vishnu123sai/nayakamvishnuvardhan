@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('navLinks');
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const printResumeBtn = document.getElementById('printResumeBtn');
-    const heroPrintBtn = document.getElementById('heroPrintBtn');
     const contactForm = document.getElementById('contactForm');
     const formAlertContainer = document.getElementById('formAlertContainer');
     const currentYear = document.getElementById('currentYear');
@@ -33,13 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             applyTheme(current);
         });
     }
-
-    // Print / Save ATS Resume PDF
-    function handlePrintResume() {
-        window.print();
-    }
-    if (printResumeBtn) printResumeBtn.addEventListener('click', handlePrintResume);
-    if (heroPrintBtn) heroPrintBtn.addEventListener('click', handlePrintResume);
 
     // Mobile Navigation Toggle
     if (navToggle && navLinks) {
